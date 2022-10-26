@@ -3,33 +3,35 @@ import Main from "../../layouts/Main";
 import Home from "../../Pages/Home/Home";
 import Category from "../../Pages/Category/Category";
 import ErrorPage from "../../ErrorPage/ErrorPage";
-import Course from "../../Pages/Course/Course";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Register/Register";
+import Course from "../../Pages/Course/Course";
 
 
 export const routes = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        errorElement: <ErrorPage />,
+        ErrorPage: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
-                loader: () => fetch(`http://localhost:5000/courses`),
+                element: <Home></Home>,
+                loader: () => fetch(`http://localhost:5000/courses`)
+            },
+            {
+                path: '/home',
                 element: <Home></Home>
             },
-
             {
                 path: '/category/:id',
-                clement: <Category></Category>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`),
+                element: <Category></Category>,
+                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
             },
-
             {
-                path: '/course/:id',
+                path: '/courses/:id',
                 element: <Course></Course>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
             },
             {
                 path: '/login',
@@ -39,6 +41,14 @@ export const routes = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>,
             },
+            // {
+            //     path: '/terms',
+            //     element: <TermsAndConditions></TermsAndConditions>,
+            // },
+            // {
+            //     path: '/profile',
+            //     element: <PrivateRoute><Profile></Profile></PrivateRoute>,
+            // }
         ]
     }
-])
+]);
