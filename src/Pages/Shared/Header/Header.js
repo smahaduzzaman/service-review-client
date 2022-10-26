@@ -5,9 +5,17 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
+import { Image } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 const Header = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
@@ -16,17 +24,33 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto text-white">
                         <Link to="/">Home</Link>
-                        <Link className='mx-3' to="/course">Course</Link>
+                        <Link className='mx-3' to="/courses">Course</Link>
                         <Link to="/blog">Blog</Link>
-                        <Link className='mx-3' to="/category">Category</Link>
+                        <Link className='mx-3' to="/tutorial">Tutorial</Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link to="/login">{user?.displayName}</Nav.Link>
+                        <Nav.Link to="/login">
+                            {
+                                user?.uid ?
+                                    <>
+                                        <span>{user?.displayName}</span>
+                                        <Button variant='light' onClick={handleLogOut}>Logout</Button>
+                                    </>
+                                    :
+                                    <>
+                                        <Link to="/login">Login</Link>
+                                        <Link to="/register">Register</Link>
+                                    </>
+                            }
+                        </Nav.Link>
                         <Nav.Link eventKey={2} to="/register">
-                            Register
+                            {user?.photoURL ?
+                                <Image style={{ height: '40px' }} roundedCircle src={user?.photoURL}></Image>
+                                : <FaUser></FaUser>
+                            }
                         </Nav.Link>
                     </Nav>
-                    <div className='d-lg-none' Collapse="sm" >
+                    <div className='d-lg-none' collapse="sm" >
                         <Sidebar></Sidebar>
                     </div>
                 </Navbar.Collapse>
