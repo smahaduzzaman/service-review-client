@@ -8,6 +8,7 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { FaUser } from 'react-icons/fa';
 import { Image } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import { toast } from 'react-toastify';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -51,7 +52,10 @@ const Header = () => {
                         </Nav.Link>
                         <Nav.Link eventKey={2} to="/register">
                             {user?.photoURL ?
-                                <Image style={{ height: '40px' }} roundedCircle src={user?.photoURL}></Image>
+                                <Image
+                                    style={{ height: '40px' }}
+                                    roundedCircle src={user?.photoURL}
+                                    onMouseOver={toast.success('Welcome ' + user?.displayName)}></Image>
                                 : <FaUser></FaUser>
                             }
                         </Nav.Link>

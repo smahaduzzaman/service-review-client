@@ -1,3 +1,4 @@
+import { updateProfile } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -22,6 +23,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                updateProfile(user, { displayName: name, photoURL: photoURL })
                 setError('');
                 toast.success('User Created Successfully');
                 form.reset();

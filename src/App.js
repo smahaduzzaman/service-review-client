@@ -18,7 +18,7 @@ function App() {
       {/* <button onClick={switchTheme}>Switch Dark</button> */}
       <div className="App">
         <RouterProvider router={routes}></RouterProvider>
-        <ToastContainer />
+        <ToastContainer position='top-center' autoClose='1000' />
       </div>
     </div>
   );
