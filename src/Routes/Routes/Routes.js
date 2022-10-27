@@ -51,6 +51,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/tutorial',
                 element: <Tutorial></Tutorial>,
+            },
+            {
+                path: '*',
+                element: <ErrorPage></ErrorPage>
             }
             // {
             //     path: '/terms',

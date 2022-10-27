@@ -10,9 +10,9 @@ const ErrorPage = () => {
             <Card.Body>
                 <Card.Title>Not Found</Card.Title>
                 <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
-                </Card.Text>
-                <Button variant="primary"><Link to="/">Return Home</Link></Button>
+                    The requested URL /your-404-page-stinks was not found on this server.                </Card.Text>
+
+                <Link to="/"><Button variant="primary">Return Home</Button></Link>
             </Card.Body>
             <Card.Footer className="text-muted"><Link to="/tutorial">Watch Tutorial</Link></Card.Footer>
         </Card>

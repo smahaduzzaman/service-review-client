@@ -38,7 +38,7 @@ const CourseDetails = ({ course }) => {
                             details
                     }
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Link to={`/courses/${_id}`}><Button variant="primary">Course Details</Button></Link>
             </Card.Body>
             <Card.Footer className="d-flex justify-content-between align-items-center">
                 <div>
