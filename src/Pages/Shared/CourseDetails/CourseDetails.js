@@ -1,5 +1,4 @@
 import React from 'react';
-import './CourseDetails.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
@@ -9,7 +8,7 @@ import { FaEye, FaRegBookmark, FaShareAlt, FaStar } from 'react-icons/fa';
 const CourseDetails = ({ course }) => {
     const { _id, title, image_url, details, author, total_view, rating, } = course;
     return (
-        <Card className="">
+        <Card className="mb-5">
             <Card.Header className='d-flex justify-content-between align-items-center'>
                 <div className='d-flex justify-content-between align-items-center'>
                     <Image
@@ -17,8 +16,8 @@ const CourseDetails = ({ course }) => {
                         style={{ width: '50px', height: '50px', borderRadius: '50%' }}
                     />
                     <div className='mx-3'>
-                        <h5>{author?.name}</h5>
-                        <p>{author?.published_date}</p>
+                        <p className='mb-0'><strong>{author?.name}</strong></p>
+                        <p><small>{author?.published_date}</small></p>
 
                     </div>
                 </div>

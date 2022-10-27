@@ -1,4 +1,5 @@
 import React from 'react';
+import './Home.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import CourseDetails from '../Shared/CourseDetails/CourseDetails';
@@ -7,12 +8,11 @@ const Home = () => {
     const allCourses = useLoaderData()
     return (
         <div>
-            <h3>Courses are here in home: {allCourses.length}</h3>
             <Container>
-                <Row className='course-card'>
-                    <Col>
+                <Row>
+                    <Col className='course-card'>
                         {
-                            allCourses.map(course => <CourseDetails
+                            allCourses.slice(0, 10).map(course => <CourseDetails
                                 course={course}
                                 key={course._id}
                             ></CourseDetails>)

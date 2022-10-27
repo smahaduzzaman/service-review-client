@@ -3,7 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ReactToPrint from 'react-to-print';
-import { FaRegBookmark } from 'react-icons/fa';
+import { FaCloudDownloadAlt, FaRegBookmark } from 'react-icons/fa';
 
 const Course = () => {
     const ref = useRef();
@@ -30,11 +30,11 @@ const Course = () => {
                 </div>
             </Card.Body>
             <div>
-                <Link to={`/category/${category_id}`}>
-                    <Button to="/checkout" variant="primary">Get Premium Access</Button>
+                <Link to='/checkout'>
+                    <Button variant="primary">Get Premium Access</Button>
                 </Link>
                 <ReactToPrint trigger={() =>
-                    <Button className='ms-3' variant="primary">Download</Button>}
+                    <Button className='ms-3' variant="primary"><FaCloudDownloadAlt />  Download</Button>}
                     content={() => ref.current}
                 ></ReactToPrint>
             </div>

@@ -9,6 +9,7 @@ import Course from "../../Pages/Course/Course";
 import Tutorial from "../../Pages/Tutorial/Tutorial";
 import Blog from "../../Pages/Blog/Blog";
 import PrivateRoute from "./PrivateRoute";
+import Checkout from "../../Pages/Checkout/Checkout";
 
 
 export const routes = createBrowserRouter([
@@ -55,7 +56,11 @@ export const routes = createBrowserRouter([
             {
                 path: '*',
                 element: <ErrorPage></ErrorPage>
-            }
+            },
+            {
+                path: '/checkout',
+                element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
+            },
             // {
             //     path: '/terms',
             //     element: <TermsAndConditions></TermsAndConditions>,
