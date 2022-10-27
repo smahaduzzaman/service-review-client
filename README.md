@@ -1,3 +1,31 @@
+React Site Name: ProTech Edu
+Author Name: S M Ahaduzzaman
+Website: https://web.facebook.com/sm.ahaduzzaman.10
+E-mail: smahaduzzaman96@gmail.com
+Tag: react, react-bootstrap, node, express, firebase, authentication
+
+# Technology is used:
+React
+React-Bootstrap
+Express JS
+React Router Dom
+Firebase
+Vercel
+Rect Icons
+Toastify
+
+# Methods are Used:
+Context API
+React Router
+useState()
+useLoader()
+useContext()
+PrivateRoute
+ErrorPage
+Firebase Authentication
+Vercel Deployment
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
