@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const [error, setError] = useState('');
@@ -20,11 +21,12 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 navigate(from, { replace: true });
+                toast.success(`Welcome ${user.displayName}`)
                 console.log(user);
             })
             .catch(error => {
-                setError(error.message)
-                console.error(error)
+                setError(error.message);
+                toast.error(error.message);
             })
     }
 
@@ -33,11 +35,12 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 navigate(from, { replace: true });
+                toast.success(`Welcome ${user.displayName}`)
                 console.log(user);
             })
             .catch(error => {
                 setError(error.message)
-                console.error(error)
+                toast.error(error.message);
             })
     }
 
@@ -53,10 +56,10 @@ const Login = () => {
                 setError('');
                 form.reset();
                 navigate('/');
+                toast.success(`Welcome ${user.displayName}`)
             })
             .catch(error => {
-                setError(error.message);
-                console.error(error);
+                toast.error(error.message)
             })
     }
 

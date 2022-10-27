@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify'
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
@@ -22,11 +23,12 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 setError('');
+                toast.success('User Created Successfully');
                 form.reset();
             })
             .catch(error => {
                 setError(error.message);
-                console.error(error);
+                toast.error(error.message);
             })
     }
     return (

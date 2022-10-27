@@ -1,6 +1,8 @@
 // import './App.css';
 import { RouterProvider } from 'react-router-dom';
 import { routes } from './Routes/Routes/Routes';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import useLocalStorage from 'use-local-storage';
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
       {/* <button onClick={switchTheme}>Switch Dark</button> */}
       <div className="App">
         <RouterProvider router={routes}></RouterProvider>
+        <ToastContainer />
       </div>
     </div>
   );
