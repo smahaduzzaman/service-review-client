@@ -7,7 +7,7 @@ const Home = () => {
     const allCourses = useLoaderData()
     return (
         <div>
-            <h2>Courses Count Home: {allCourses.length}</h2>
+            <h3>Courses are here in home: {allCourses.length}</h3>
             <Container>
                 <Row className='course-card'>
                     <Col>

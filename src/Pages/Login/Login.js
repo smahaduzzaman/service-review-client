@@ -9,9 +9,9 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const { googleSignIn, signIn } = useContext(AuthContext);
+    const { googleSignIn, signIn, githubSignIn } = useContext(AuthContext);
     const location = useLocation()
-    const from = location.state?.from?.pathname || '/'
+    const from = location.state?.from?.pathname || '/';
 
     const navigate = useNavigate()
 
@@ -19,7 +19,20 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 const user = result.user;
-                navigate(from, { replace: true })
+                navigate(from, { replace: true });
+                console.log(user);
+            })
+            .catch(error => {
+                setError(error.message)
+                console.error(error)
+            })
+    }
+
+    const handleGithubSignIn = () => {
+        githubSignIn()
+            .then(result => {
+                const user = result.user;
+                navigate(from, { replace: true });
                 console.log(user);
             })
             .catch(error => {
@@ -72,7 +85,7 @@ const Login = () => {
             </Form>
             <div className='mt-4'>
                 <Button onClick={handleGoogleSignIn} variant="outline-primary"><FaGoogle></FaGoogle> Google Login</Button>{' '}
-                <Button variant="outline-primary"><FaGithub></FaGithub> GitHub Login</Button>{' '}
+                <Button onClick={handleGithubSignIn} variant="outline-primary"><FaGithub></FaGithub> GitHub Login</Button>{' '}
             </div>
             <div className='mt-3'>
                 <p>Don't have an account? Please <Link to="/register"><strong>Register</strong></Link></p>

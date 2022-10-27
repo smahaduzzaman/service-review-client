@@ -11,9 +11,12 @@ const Sidebar = () => {
     }, [])
     return (
         <div>
-            <h2>All Courses {categories.length}</h2>
+            <h3>Popular Courses {categories.length}</h3>
             {
-                categories.map(category => <Link to={`/category/${category.id}`}><p>{category.name}</p></Link>)
+                categories.map(category => <p key={category.id}>
+                    <Link to={`/category/${category.id}`}>{category.name}</Link>
+                </p>)
+
             }
         </div>
     );

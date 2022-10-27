@@ -3,14 +3,14 @@ import { useLoaderData } from 'react-router-dom';
 import CourseDetails from '../Shared/CourseDetails/CourseDetails';
 
 const Category = () => {
-    const catCourses = useLoaderData();
+    const corCates = useLoaderData();
 
     return (
         <div>
-            <p>Categories: {catCourses.length}</p>
+            <p>Categories: {corCates.length}</p>
             <div>
                 {
-                    catCourses.map(course => <CourseDetails
+                    corCates.map(course => <CourseDetails
                         key={course._id}
                         course={course}
                     ></CourseDetails>)

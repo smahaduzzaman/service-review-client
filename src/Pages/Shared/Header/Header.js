@@ -17,9 +17,14 @@ const Header = () => {
             .catch(error => console.error(error))
     }
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='mb-3'>
             <Container>
-                <Navbar.Brand to="#home"><Link to="/">ProTech Edu</Link></Navbar.Brand>
+                <Navbar.Brand><Link style={{
+                    fontSize: '30px',
+                    color: 'black',
+                    textDecoration: 'none'
+                }}
+                    to="/">ProTech Edu</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto text-white">
@@ -38,7 +43,7 @@ const Header = () => {
                                     </>
                                     :
                                     <>
-                                        <Link to="/login">Login</Link>
+                                        <Link className='me-3' to="/login">Login</Link>
                                         <Link to="/register">Register</Link>
                                     </>
                             }
