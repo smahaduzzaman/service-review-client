@@ -1,19 +1,20 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <Card className="text-center" bg="dark" variant="light">
-            <Card.Header>Featured</Card.Header>
+        <Card className="text-center" bg="dark" variant="dark">
+            <Card.Header className='text-white'>See You Again</Card.Header>
             <Card.Body >
-                <Card.Title>Special title treatment</Card.Title>
-                <Card.Text>
-                    With supporting text below as a natural lead-in to additional content.
+                <Card.Title className='text-white'>ProTech Edu</Card.Title>
+                <Card.Text className='text-white'>
+                    ProTech Edu is an Educational Site for ICT lovers.
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Link to="/tutorial"><Button variant="primary">Our Tutorial</Button></Link>
             </Card.Body>
-            <Card.Footer className="text-muted">2 days ago</Card.Footer>
+            <Card.Footer className="text-muted">Copyright @ ProTech Edu | S M Ahaduzzaman</Card.Footer>
         </Card>
     );
 };

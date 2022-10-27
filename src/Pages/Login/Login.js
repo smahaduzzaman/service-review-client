@@ -15,8 +15,6 @@ const Login = () => {
     const location = useLocation()
     const from = location.state?.from?.pathname || '/';
 
-
-
     const handleGoogleSignIn = () => {
         googleSignIn()
             .then(result => {

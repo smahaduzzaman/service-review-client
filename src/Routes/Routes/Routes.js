@@ -22,7 +22,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch(`http://localhost:5000/courses`)
+                loader: () => fetch(`https://b610-lerning-platform-server-side-smahaduzzaman.vercel.app/courses`)
             },
             {
                 path: '/home',
@@ -31,17 +31,17 @@ export const routes = createBrowserRouter([
             {
                 path: '/category/:id',
                 element: <Category></Category>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://b610-lerning-platform-server-side-smahaduzzaman.vercel.app/categories/${params.id}`)
             },
             {
                 path: '/courses/:id',
                 element: <PrivateRoute><Course></Course></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://b610-lerning-platform-server-side-smahaduzzaman.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/courses',
                 element: <PrivateRoute><Courses></Courses></PrivateRoute>,
-                loader: () => fetch(`http://localhost:5000/courses`)
+                loader: () => fetch(`https://b610-lerning-platform-server-side-smahaduzzaman.vercel.app/courses`)
             },
             {
                 path: '/login',
@@ -58,7 +58,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/tutorial',
                 element: <PrivateRoute><Tutorial></Tutorial></PrivateRoute>,
-                loader: () => fetch(`http://localhost:5000/courses`)
+                loader: () => fetch(`https://b610-lerning-platform-server-side-smahaduzzaman.vercel.app/courses`)
 
             },
             {
