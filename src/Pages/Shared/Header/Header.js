@@ -17,21 +17,22 @@ const Header = () => {
             .catch(error => console.error(error))
     }
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light" className='mb-3'>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='mb-3'>
             <Container>
                 <Navbar.Brand><Link style={{
                     fontSize: '30px',
-                    color: 'black',
-                    textDecoration: 'none'
+                    color: 'white',
+                    textDecoration: 'none',
+                    fontWeight: 'semibold'
                 }}
                     to="/">ProTech Edu</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto text-white">
-                        <Link to="/">Home</Link>
-                        <Link className='mx-3' to="/courses">Course</Link>
-                        <Link to="/blog">Blog</Link>
-                        <Link className='mx-3' to="/tutorial">Tutorial</Link>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to="/">Home</Link>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} className='mx-3' to="/courses">Course</Link>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} to="/blog">Blog</Link>
+                        <Link style={{ textDecoration: 'none', color: 'white' }} className='mx-3' to="/tutorial">Tutorial</Link>
                     </Nav>
                     <Nav>
                         <Nav.Link to="/login">
@@ -39,7 +40,7 @@ const Header = () => {
                                 user?.uid ?
                                     <>
                                         <span>{user?.displayName}</span>
-                                        <Button variant='light' onClick={handleLogOut}>Logout</Button>
+                                        <Button className='mx-3' variant='light' onClick={handleLogOut}>Logout</Button>
                                     </>
                                     :
                                     <>

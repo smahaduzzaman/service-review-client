@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCrUyhzM8fSYU7es5xbNcZaa50j0qYritQ",
-    authDomain: "protech-edu.firebaseapp.com",
-    projectId: "protech-edu",
-    storageBucket: "protech-edu.appspot.com",
-    messagingSenderId: "632326376877",
-    appId: "1:632326376877:web:e23fe2cb8856fd9762e524"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase
