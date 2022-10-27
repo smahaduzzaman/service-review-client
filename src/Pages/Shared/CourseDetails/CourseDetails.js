@@ -4,13 +4,11 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image'
 import { FaEye, FaRegBookmark, FaShareAlt, FaStar } from 'react-icons/fa';
-import Courses from '../../Courses/Courses';
 
 const CourseDetails = ({ course }) => {
     const { _id, title, image_url, details, author, total_view, rating, } = course;
     return (
         <Card className="mb-5">
-            <h2>Courses Length: {course.length}</h2>
             <Card.Header className='d-flex justify-content-between align-items-center'>
                 <div className='d-flex justify-content-between align-items-center'>
                     <Image
