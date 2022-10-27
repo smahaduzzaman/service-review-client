@@ -35,6 +35,7 @@ const Header = () => {
                         <Link style={{ textDecoration: 'none', color: 'white' }} to="/blog">Blog</Link>
                         <Link style={{ textDecoration: 'none', color: 'white' }} className='mx-3' to="/tutorial">Tutorial</Link>
                     </Nav>
+                    <Button className='mx-3' variant='light'>Switch Dark</Button>
                     <Nav>
                         <Nav.Link to="/login">
                             {

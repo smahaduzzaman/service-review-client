@@ -15,7 +15,7 @@ function App() {
   return (
     // data-theme={theme}
     <div >
-      {/* <button onClick={switchTheme}>Switch Dark</button> */}
+      {/* <button className='text-center'>Switch Dark</button> */}
       <div className="App">
         <RouterProvider router={routes}></RouterProvider>
         <ToastContainer position='top-center' autoClose='1000' />

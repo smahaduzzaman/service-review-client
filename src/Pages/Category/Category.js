@@ -11,10 +11,10 @@ const Category = () => {
             <p>Categories: {corCates?.length}</p>
             <div>
                 {
-                    corCates?.length && corCates.map(course => <Sidebar
+                    corCates?.length && corCates.map(course => <CourseDetails
                         key={course._id}
                         course={course}
-                    ></Sidebar>)
+                    ></CourseDetails>)
                 }
             </div>
         </div>
