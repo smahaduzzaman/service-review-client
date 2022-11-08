@@ -1,22 +1,43 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const SignIn = () => {
+
+    const { login } = useContext(AuthContext);
+
+    const handleLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        login(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .then(error => console.log(error));
+    }
 
     return (
         <div className=' dark:bg-gray-900 dark:text-gray-100"'>
             <div className="w-3/4 p-8 space-y-3 mx-auto dark:bg-gray-900 dark:text-gray-100">
                 <h1 className="text-2xl font-bold text-center">Sign In</h1>
-                <form novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
+                <form onSubmit={handleLogin} novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
+                    {/* <div className="space-y-1 text-sm">
+                        <label for="name" className="block dark:text-gray-400">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Name" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                    </div> */}
                     <div className="space-y-1 text-sm">
-                        <label for="username" className="block dark:text-gray-400">Username</label>
-                        <input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <label for="email" className="block dark:text-gray-400">Emai.</label>
+                        <input type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label for="password" className="block dark:text-gray-400">Password</label>
                         <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                         <div className="flex justify-end text-xs dark:text-gray-400">
-                            <a rel="noopener noreferrer" href="#">Forgot Password?</a>
+                            <Link rel="noopener noreferrer" to="#">Forgot Password?</Link>
                         </div>
                     </div>
                     <input type="submit" value="Sign In" placeholder='Sing In' className="block w-full p-3 text-center rounded-sm dark:text-gray-900 dark:bg-violet-400" />
@@ -43,7 +64,7 @@ const SignIn = () => {
                         </svg>
                     </button>
                 </div>
-                <p className="text-xs text-center sm:px-6 dark:text-gray-400">Don't have an account?
+                <p className="text-xs text-center sm:px-6 dark:text-gray-400">Don't have an account? Please
                     <Link rel="noopener noreferrer" to="/signup" className="underline dark:text-gray-100">Sign up</Link>
                 </p>
             </div>
