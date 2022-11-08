@@ -23,7 +23,7 @@ const SingleService = ({ service }) => {
                 }
             </div>
             <div>
-                <Link to={`/services/${service.id}`}><img src={img} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" /></Link>
+                <Link to={`/services/${service.id}`}><img src={img} alt="" className="object-cover w-full rounded-lg mb-4 h-60 sm:h-96 dark:bg-gray-500" /></Link>
                 <h2 className="mb-1 text-xl font-semibold">{title}</h2>
                 <p className="text-sm dark:text-gray-400">{description}</p>
             </div>

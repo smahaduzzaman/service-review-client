@@ -4,7 +4,7 @@ import Slider from './Slider/Slider';
 
 const Home = () => {
     return (
-        <div>
+        <div className='dark:bg-gray-900 dark:text-gray-100'>
             <Slider></Slider>
             <Services></Services>
         </div>
