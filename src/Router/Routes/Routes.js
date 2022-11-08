@@ -4,6 +4,10 @@ import Home from "../../Pages/Home/Home/Home";
 import ErrorPage from "../../Pages/Shared/ErrorPage/ErrorPage";
 import Details from "../../Pages/Details/Details";
 import Reviews from "../../Pages/Reviews/Reviews";
+import Services from "../../Pages/Home/Services/Services";
+import Faqs from "../../Pages/Faqs/Faqs";
+import SignIn from "../../Pages/SignIn/SignIn";
+import SignUp from "../../Pages/SignUp/SignUp.";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +27,22 @@ const router = createBrowserRouter([
             {
                 path: '/reviews',
                 element: <Reviews></Reviews>,
+            },
+            {
+                path: '/services',
+                element: <Services></Services>,
+            },
+            {
+                path: '/faqs',
+                element: <Faqs></Faqs>,
+            },
+            {
+                path: '/signin',
+                element: <SignIn></SignIn>,
+            },
+            {
+                path: 'signup',
+                element: <SignUp></SignUp>,
             }
         ]
     },
