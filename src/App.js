@@ -1,5 +1,6 @@
 import { RouterProvider } from 'react-router-dom';
 import router from './Router/Routes/Routes';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import './App.css';
 
 function App() {
