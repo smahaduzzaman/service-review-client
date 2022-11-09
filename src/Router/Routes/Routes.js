@@ -8,6 +8,7 @@ import Services from "../../Pages/Home/Services/Services";
 import Faqs from "../../Pages/Faqs/Faqs";
 import SignIn from "../../Pages/SignIn/SignIn";
 import SignUp from "../../Pages/SignUp/SignUp.";
+import AllServices from "../../Pages/Home/Home/AllServices/AllServices";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>
+            },
+            {
+                path: 'details',
+                element: <Details></Details>
             },
             {
                 path: '/details/:id',
@@ -31,6 +36,11 @@ const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>,
+            },
+            {
+                path: 'allservices',
+                element: <AllServices></AllServices>,
+                loader: () => fetch(`http://localhost:5000/allservices`)
             },
             {
                 path: '/faqs',

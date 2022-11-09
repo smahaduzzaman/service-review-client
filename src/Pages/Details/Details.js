@@ -1,18 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const Details = () => {
     const serviceDetails = useLoaderData();
-    const { title, description, img } = serviceDetails;
+    const { title, description, img, author, popularity } = serviceDetails;
+
+    const handleAddReview = (event) => {
+        event.preventDefault();
+        const feedback = event.target.feedback.value;
+        const reviews = {
+            feedback,
+            title,
+            author,
+            popularity,
+            img
+        }
+
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(reviews)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    alert('Review added successfully');
+                    event.target.reset();
+                }
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+
     return (
         <div className='p-10 dark:bg-gray-900'>
             <div className="shadow-md w-full lg:h-screen dark:bg-gray-900 dark:text-gray-100">
                 <div className="flex items-center justify-between p-3">
                     <div className="flex items-center space-x-2">
-                        <img src="https://source.unsplash.com/50x50/?portrait" alt="" className="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700" />
+                        <img src={author.photoUrl} alt="" className="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700" />
                         <div className="-space-y-1">
-                            <h2 className="text-sm font-semibold leading-none">leroy_jenkins72</h2>
-                            <span className="inline-block text-xs leading-none dark:text-gray-400">Somewhere</span>
+                            <h2 className="text-sm font-semibold leading-none">{author.name}</h2>
+                            <span className="inline-block text-xs leading-none dark:text-gray-400">
+                                {author.address.street}, {author.address.city}
+                            </span>
                         </div>
                     </div>
                     <button title="Open options" type="button">
@@ -23,7 +57,7 @@ const Details = () => {
                         </svg>
                     </button>
                 </div>
-                <img src="https://source.unsplash.com/301x301/?random" alt="" className="object-cover object-center w-full h-72 dark:bg-gray-500" />
+                <img src={img} alt="" className="object-cover object-center w-full h-72 dark:bg-gray-500" />
                 <div className="p-3">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
@@ -57,20 +91,21 @@ const Details = () => {
                                 <img alt="" className="w-5 h-5 border rounded-full dark:bg-gray-500 dark:border-gray-800" src="https://source.unsplash.com/40x40/?portrait?3" />
                             </div>
                             <span className="text-sm m-3">Liked by
-                                <span className="font-semibold">Mamba UI</span>and
-                                <span className="font-semibold">86 others</span>
+                                <span className="font-semibold mx-3">{author.company.name}</span>and
+                                <span className="font-semibold ml-3">{popularity.count} others</span>
                             </span>
                         </div>
                     </div>
                     <div className="space-y-3">
                         <p className="text-sm mb-3">
-                            <span className="text-base font-semibold">leroy_jenkins72</span>Nemo ea quasi debitis impedit!
+                            <span className="text-base font-semibold">{author.email}</span> {author.phone}
                         </p>
-                        <Link to='/reviews' type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-100 dark:text-gray-100">All Reviews</Link>
+                        <p className="text-sm mb-10 pb-10">{description}</p>
+                        <Link to='/reviews' type="button" className="px-8 py-5 font-semibold border rounded dark:border-gray-100 dark:text-gray-100">All Reviews</Link>
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col w-full p-8 shadow-sm lg:p-12 dark:bg-gray-900 dark:text-gray-100">
+            <div className="flex flex-col w-full p-8 shadow-sm lg:p-12 mt-80 dark:bg-gray-900 dark:text-gray-100">
                 <div className="flex flex-col items-center w-full">
                     <h2 className="text-3xl font-semibold text-center">Your opinion matters!</h2>
                     <div className="flex flex-col items-center py-6 space-y-3">
@@ -103,10 +138,10 @@ const Details = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="flex flex-col w-full">
-                        <textarea rows="3" placeholder="Message..." className="p-4 rounded-md resize-none dark:text-gray-100 dark:bg-gray-900"></textarea>
-                        <button type="button" className="py-4 my-8 font-semibold rounded-md dark:text-gray-900 dark:bg-violet-400">Leave feedback</button>
-                    </div>
+                    <form onSubmit={handleAddReview} className="flex flex-col w-full">
+                        <textarea name='feedback' id='message' rows="3" placeholder="Message..." className="p-4 rounded-md resize-none dark:text-gray-100 dark:bg-gray-900" required></textarea>
+                        <input type="submit" className="py-4 my-8 font-semibold rounded-md dark:text-gray-900 dark:bg-violet-400" value="Leave feedback" />
+                    </form>
                 </div>
                 <div className="flex items-center justify-center">
                     <a rel="noopener noreferrer" href="#" className="text-sm dark:text-gray-400">Maybe later</a>
