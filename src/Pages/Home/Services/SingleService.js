@@ -22,6 +22,7 @@ const SingleService = ({ service }) => {
             <div className="flex flex-wrap justify-between">
                 <div className="space-x-2">
                     <Link to={`/details/${service._id}`} type="button" className="px-5 py-1 font-semibold border rounded dark:border-gray-100 dark:text-gray-100">Details</Link>
+
                     <button aria-label="Bookmark this post" type="button" className="p-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-4 h-4 fill-current dark:text-violet-400">
                             <path d="M424,496H388.75L256.008,381.19,123.467,496H88V16H424ZM120,48V456.667l135.992-117.8L392,456.5V48Z"></path>

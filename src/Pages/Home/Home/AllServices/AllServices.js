@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import SingleToAll from './SingleToAll';
 
 const AllServices = () => {
-    const { allServices } = useLoaderData();
+    const allServices = useLoaderData();
 
     return (
         <div className='grid grid-cols-3 gap-5 m-10 p-10'>

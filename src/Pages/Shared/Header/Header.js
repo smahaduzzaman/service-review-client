@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logos/get-your-writer-logo.png';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.error(err);
+            })
+    }
+
     return (
         <header className="p-4 dark:bg-gray-800 dark:text-gray-100">
             <div className="flex justify-between h-16 mx-auto">
@@ -24,7 +37,11 @@ const Header = () => {
                     </li>
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
-                    <Link to="/signin" className="self-center px-8 py-3 rounded">Sign in</Link>
+                    {
+                        user?.email ? <Link onClick={handleLogOut} rel="noopener noreferrer" to="/signin" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Sign Out</Link>
+                            : <Link to="/signin" className="self-center px-8 py-3 rounded">Sign in</Link>
+
+                    }
                     <Link to="/signup" className="self-center px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Sign up</Link>
                 </div>
                 <button className="p-4 lg:hidden">

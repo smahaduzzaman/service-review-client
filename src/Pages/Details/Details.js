@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const Details = () => {
@@ -144,7 +144,7 @@ const Details = () => {
                     </form>
                 </div>
                 <div className="flex items-center justify-center">
-                    <a rel="noopener noreferrer" href="#" className="text-sm dark:text-gray-400">Maybe later</a>
+                    <Link rel="noopener noreferrer" href="#" className="text-sm dark:text-gray-400">Maybe later</Link>
                 </div>
             </div>
         </div>
