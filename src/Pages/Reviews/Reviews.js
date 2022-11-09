@@ -5,15 +5,28 @@ import { Link } from 'react-router-dom';
 import Review from './Review';
 
 const Reviews = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
         // fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-        fetch(`http://localhost:5000/reviews `)
-            .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [user?.email])
+        fetch(`http://localhost:5000/reviews `, {
+            // headers: {
+            // authorization: `Bearer ${localStorage.getItem('token')}`
+
+            // }
+        })
+            .then(res => {
+                // if (res.status === 401 || res.status === 403) {
+                //     return logOut();
+                // }
+                return res.json();
+            })
+            .then(data => {
+                console.log('reviews', data);
+                setReviews(data);
+            })
+    }, [user?.email, logOut]);
 
     return (
         <div className="flex flex-col w-full mx-auto py-10 p-6 space-y-4 sm:p-10 dark:bg-gray-900 dark:text-gray-100">
