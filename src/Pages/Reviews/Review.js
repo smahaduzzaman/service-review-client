@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Helmet from 'react-helmet';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Review = ({ review }) => {
@@ -58,6 +59,10 @@ const Review = ({ review }) => {
 
     return (
         <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
+            <Helmet>
+                <title>Review</title>
+                <meta name="description" content="Review" />
+            </Helmet>
             <div className="flex w-full space-x-2 sm:space-x-4">
                 {
                     img ?

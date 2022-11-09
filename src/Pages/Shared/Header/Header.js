@@ -20,7 +20,12 @@ const Header = () => {
         <header className="p-4 dark:bg-gray-800 dark:text-gray-100">
             <div className="flex justify-between h-16 mx-auto">
                 <Link rel="noopener noreferrer" to="/" aria-label="Back to homepage" className="flex justify-start items-center p-2">
-                    <img className='w-1/2' src={logo} alt="Logo" />
+                    <img
+                        className='w-1/2'
+                        src={logo}
+                        alt="Logo"
+
+                    />
                 </Link>
                 <ul className="items-stretch hidden mr-60 space-x-3 lg:flex">
                     <li className="flex">

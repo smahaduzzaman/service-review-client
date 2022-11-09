@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const Details = () => {
@@ -38,6 +39,10 @@ const Details = () => {
 
     return (
         <div className='p-10 dark:bg-gray-900'>
+            <Helmet>
+                <title>Details</title>
+                <meta name="description" content="Details" />
+            </Helmet>
             <div className="shadow-md w-full lg:h-screen dark:bg-gray-900 dark:text-gray-100">
                 <div className="flex items-center justify-between p-3">
                     <div className="flex items-center space-x-2">

@@ -1,8 +1,14 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 const Faqs = () => {
+
     return (
         <section className="dark:bg-gray-800 dark:text-gray-100">
+            <Helmet>
+                <title>FAQs</title>
+                <meta name="description" content="FAQs" />
+            </Helmet>
             <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
                 <h2 className="text-2xl font-semibold sm:text-4xl">Frequently Asked Questions</h2>
                 <p className="mt-4 mb-8 dark:text-gray-400">Sagittis tempor donec id vestibulum viverra. Neque condimentum primis orci at lacus amet bibendum.</p>

@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
 import Review from './Review';
+import Helmet from 'react-helmet';
 
 const Reviews = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -30,6 +31,10 @@ const Reviews = () => {
 
     return (
         <div className="flex flex-col w-full mx-auto py-10 p-6 space-y-4 sm:p-10 dark:bg-gray-900 dark:text-gray-100">
+            <Helmet>
+                <title>Reviews</title>
+                <meta name="description" content="Reviews" />
+            </Helmet>
             <h2 className="text-xl font-semibold">Your Feedback</h2>
             <ul className="flex flex-col divide-y divide-gray-700 p-10">
                 {

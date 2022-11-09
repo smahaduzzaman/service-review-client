@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
@@ -21,6 +22,10 @@ const SignUp = () => {
 
     return (
         <div className=' dark:bg-gray-900 dark:text-gray-100"'>
+            <Helmet>
+                <title>Sign Up</title>
+                <meta name="description" content="Sign Up" />
+            </Helmet>
             <div className="w-3/4 p-8 space-y-3 mx-auto dark:bg-gray-900 dark:text-gray-100">
                 <h1 className="text-2xl font-bold text-center">Sign Up</h1>
                 <form onSubmit={handleSignUp} novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
