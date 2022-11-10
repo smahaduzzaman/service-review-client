@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
@@ -16,8 +18,12 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                toast.success('User Created Successful');
             })
-            .catch(err => console.error(err));
+            .catch(err => {
+                console.log(err);
+                toast.error('User Created Failed');
+            });
     }
 
     return (

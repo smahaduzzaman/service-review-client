@@ -4,6 +4,8 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
 import Review from './Review';
 import Helmet from 'react-helmet';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Reviews = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -26,6 +28,7 @@ const Reviews = () => {
             .then(data => {
                 console.log('reviews', data);
                 setReviews(data);
+                toast.success('Reviews Loaded');
             })
     }, [user?.email, logOut]);
 

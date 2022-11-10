@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import Helmet from 'react-helmet';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignIn = () => {
 
@@ -41,9 +43,13 @@ const SignIn = () => {
                         console.log(data);
                         localStorage.setItem('token', data.token);
                         navigate(from, { replace: true });
+                        toast.success('Login Successful');
                     });
             })
-            .then(error => console.log(error));
+            .then(error => {
+                console.log(error);
+                toast.error('Login Failed');
+            });
     }
 
     const handleGoogleSignIn = () => {
@@ -67,12 +73,17 @@ const SignIn = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
+
                         console.log(data);
                         localStorage.setItem('token', data.token);
                         navigate(from, { replace: true });
+                        toast.success(`Welcome ${user.displayName}`)
                     });
             })
-            .then(error => console.log(error));
+            .then(error => {
+                console.log(error);
+                toast.error(error.message);
+            });
     }
 
     const handleGihubSignIn = () => {
@@ -99,9 +110,13 @@ const SignIn = () => {
                         console.log(data);
                         localStorage.setItem('token', data.token);
                         navigate(from, { replace: true });
+                        toast.success(`Welcome ${user.displayName}`)
                     });
             })
-            .then(error => console.log(error));
+            .then(error => {
+                console.log(error);
+                toast.error(error.message);
+            });
 
     }
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Details = () => {
     const serviceDetails = useLoaderData();
@@ -27,6 +29,7 @@ const Details = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                toast.success('Review Added Successfully');
                 if (data.acknowledged) {
                     alert('Review added successfully');
                     event.target.reset();
@@ -34,6 +37,7 @@ const Details = () => {
             })
             .catch(error => {
                 console.error(error)
+                toast.error('Review Added Failed');
             })
     }
 

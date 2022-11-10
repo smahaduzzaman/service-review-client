@@ -4,6 +4,8 @@ import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuth
 import app from '../../firebase/firebase.config';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -37,6 +39,7 @@ const AuthProvider = ({ children }) => {
 
     const logOut = () => {
         localStorage.removeItem('genius-token');
+        toast.success('Logout Successful');
         return signOut(auth);
     }
 

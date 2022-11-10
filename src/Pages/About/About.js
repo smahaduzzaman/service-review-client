@@ -1,8 +1,13 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 const About = () => {
     return (
         <section className="my-8">
+            <Helmet>
+                <title>About Page</title>
+                <meta name="description" content="About Page" />
+            </Helmet>
             <div className="container mx-auto flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12">
                 <h1 className="text-4xl font-semibold leading-none text-center">What our customers are saying about us</h1>
             </div>

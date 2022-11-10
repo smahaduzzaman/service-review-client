@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Review = ({ review }) => {
     const [reviews, setReviews] = useState([]);
@@ -28,6 +30,7 @@ const Review = ({ review }) => {
                         setReviews(remaining);
                         // update localStorage
                         localStorage.setItem('reviews', JSON.stringify(remaining));
+                        toast.success('Deleted Successfully');
                     }
 
                 })
@@ -54,6 +57,7 @@ const Review = ({ review }) => {
                     setReviews(newReviews);
                 }
                 navigate(from, { replace: true });
+                toast.success('Updated Successfully');
             })
     }
 

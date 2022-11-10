@@ -1,8 +1,13 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 const Pricing = () => {
     return (
         <section className="py-20 dark:bg-gray-800 dark:text-gray-100">
+            <Helmet>
+                <title>Price Page</title>
+                <meta name="description" content="Pricing Page" />
+            </Helmet>
             <div className="container px-4 mx-auto">
                 <div className="max-w-2xl mx-auto mb-16 text-center">
                     <span className="font-bold tracking-wider uppercase dark:text-violet-400">Pricing</span>
