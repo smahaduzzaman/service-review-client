@@ -12,6 +12,8 @@ import AllServices from "../../Pages/Home/Home/AllServices/AllServices";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyReview from "../../Pages/Reviews/MyReview";
 import AddService from "../../Pages/Home/Services/AddService";
+import Modal from "../../Pages/Home/Services/Modal";
+import About from "../../Pages/About/About";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +52,10 @@ const router = createBrowserRouter([
                 element: <Faqs></Faqs>,
             },
             {
+                path: '/about',
+                element: <About></About>
+            },
+            {
                 path: '/signin',
                 element: <SignIn></SignIn>,
             },
@@ -64,6 +70,11 @@ const router = createBrowserRouter([
             {
                 path: '/addservice',
                 element: <PrivateRoute><AddService></AddService></PrivateRoute>,
+            },
+            {
+                path: '/modal/:id',
+                element: <Modal></Modal>,
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             }
         ]
     },

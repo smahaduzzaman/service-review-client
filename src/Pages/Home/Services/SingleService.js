@@ -1,10 +1,15 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Modal from '../../../Pages/Home/Services/Modal';
 
 const SingleService = ({ service }) => {
+    const [modalOn, setModalOn] = useState(false);
+    const [choice, setChoice] = useState(false)
     const { _id, title, description, img, author, popularity } = service;
 
+    const clicked = () => {
+        setModalOn(true)
+    }
 
     return (
         <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
@@ -16,7 +21,19 @@ const SingleService = ({ service }) => {
                 </div>
             </div>
             <div className=''>
-                <Link to={`/services/${service._id}`}><img src={img} alt="" className="w-full h-auto rounded-lg mb-4 h-60 sm:h-96 dark:bg-gray-500" /></Link>
+                <div>
+                    <img
+                        onClick={clicked}
+                        src={img} alt={title}
+                        className="w-full h-auto rounded-lg mb-4 h-60 sm:h-96 dark:bg-gray-500 cursor-pointer"
+                    />
+                    {modalOn && < Modal setModalOn={setModalOn} setChoice={setChoice} />}
+                    {choice &&
+                        <div className="flex justify-center">
+                            <div className="flex  justify-center w-1/3 bg-red-400 m-4 p-6 text-lg text-white "> You have been bitten !!!</div>
+                        </div>
+                    }
+                </div>
                 <h2 className="mb-1 text-xl font-semibold">{title}</h2>
                 <p className="text-sm dark:text-gray-400">{description.slice(0, 300)}</p>
             </div>

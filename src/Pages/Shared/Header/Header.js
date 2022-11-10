@@ -29,10 +29,10 @@ const Header = () => {
                         <Link rel="noopener noreferrer" to="/services" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Services</Link>
                     </li>
                     <li className="flex">
-                        <Link rel="noopener noreferrer" to="/reviews" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Reviews</Link>
+                        <Link rel="noopener noreferrer" to="/about" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">About</Link>
                     </li>
                     <li className="flex">
-                        <Link rel="noopener noreferrer" to="/faqs" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">FAQ's</Link>
+                        <Link rel="noopener noreferrer" to="/faqs" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Blog</Link>
                     </li>
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
@@ -40,7 +40,7 @@ const Header = () => {
                         user?.email ?
                             <>
                                 <div className=''>
-                                    <Link rel="noopener noreferrer" to="/myreview" className="px-4 -mb-1 border-b-2 dark:border-transparent">My Review</Link>
+                                    <Link rel="noopener noreferrer" to="/reviews" className="px-4 -mb-1 border-b-2 dark:border-transparent">My Review</Link>
                                     <Link rel="noopener noreferrer" to="/addservice" className="px-4 -mb-1 border-b-2 dark:border-transparent">Add Servece</Link>
                                 </div>
 
