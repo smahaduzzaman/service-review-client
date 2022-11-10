@@ -20,13 +20,7 @@ const Header = () => {
         <header className="p-4 dark:bg-gray-800 dark:text-gray-100">
             <div className="flex justify-between h-16 mx-auto">
                 <Link rel="noopener noreferrer" to="/" aria-label="Back to homepage" className="flex justify-start items-center p-2">
-                    <img
-                        className='w-1/2'
-                        src={logo}
-                        alt="Logo"
-
-                    />
-                </Link>
+                    <img className='w-1/2' src={logo} alt="Logo" /></Link>
                 <ul className="items-stretch hidden mr-60 space-x-3 lg:flex">
                     <li className="flex">
                         <Link rel="noopener noreferrer" to="/" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400">Home</Link>
@@ -43,7 +37,15 @@ const Header = () => {
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
                     {
-                        user?.email ? <Link onClick={handleLogOut} rel="noopener noreferrer" to="/signin" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Sign Out</Link>
+                        user?.email ?
+                            <>
+                                <div className=''>
+                                    <Link rel="noopener noreferrer" to="/myreview" className="px-4 -mb-1 border-b-2 dark:border-transparent">My Review</Link>
+                                    <Link rel="noopener noreferrer" to="/addservice" className="px-4 -mb-1 border-b-2 dark:border-transparent">Add Servece</Link>
+                                </div>
+
+                                <Link onClick={handleLogOut} rel="noopener noreferrer" to="/signin" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Sign Out</Link>
+                            </>
                             : <Link to="/signin" className="self-center px-8 py-3 rounded">Sign in</Link>
 
                     }

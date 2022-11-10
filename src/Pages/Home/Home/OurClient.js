@@ -1,31 +1,31 @@
 import React from 'react';
 
-const OurTeam = () => {
+const OurClient = () => {
     return (
         <section className="py-6 dark:bg-gray-900 dark:text-gray-100 my-10">
             <div className="container flex flex-col items-center justify-center p-4 mx-auto space-y-8 sm:p-10">
-                <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">Our team</h1>
+                <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">VIP CLIENT</h1>
                 <p className="max-w-2xl text-center dark:text-gray-400">At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur quam natus quis nihil quod, hic explicabo doloribus magnam neque, exercitationem eius sunt!</p>
                 <div className="flex flex-row flex-wrap-reverse justify-center">
                     <div className="flex flex-col justify-center m-8 text-center">
                         <img alt="" className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?0" />
-                        <p className="text-xl font-semibold leading-tight">Leroy Jenkins</p>
-                        <p className="dark:text-gray-400">Visual Designer</p>
+                        <p className="text-xl font-semibold leading-tight">Lora Lansole</p>
+                        <p className="dark:text-gray-400">CEO, Rang's Private Ltd.</p>
                     </div>
                     <div className="flex flex-col justify-center m-8 text-center">
                         <img alt="" className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?1" />
-                        <p className="text-xl font-semibold leading-tight">Leroy Jenkins</p>
-                        <p className="dark:text-gray-400">Visual Designer</p>
+                        <p className="text-xl font-semibold leading-tight">Mehan Doe Ulat</p>
+                        <p className="dark:text-gray-400">Prof. Daily Draft</p>
                     </div>
                     <div className="flex flex-col justify-center m-8 text-center">
                         <img alt="" className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?2" />
-                        <p className="text-xl font-semibold leading-tight">Leroy Jenkins</p>
-                        <p className="dark:text-gray-400">Visual Designer</p>
+                        <p className="text-xl font-semibold leading-tight">Menononi Hacay</p>
+                        <p className="dark:text-gray-400">Co-rodinator, Ujala Dew Drive</p>
                     </div>
                     <div className="flex flex-col justify-center m-8 text-center">
                         <img alt="" className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?3" />
-                        <p className="text-xl font-semibold leading-tight">Leroy Jenkins</p>
-                        <p className="dark:text-gray-400">Visual Designer</p>
+                        <p className="text-xl font-semibold leading-tight">Lancy Lue Lita</p>
+                        <p className="dark:text-gray-400">Pricinpal, Cambridge Short Ltd.</p>
                     </div>
                     <div className="flex flex-col justify-center m-8 text-center">
                         <img alt="" className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?4" />
@@ -34,8 +34,8 @@ const OurTeam = () => {
                     </div>
                     <div className="flex flex-col justify-center m-8 text-center">
                         <img alt="" className="self-center flex-shrink-0 w-24 h-24 mb-4 bg-center bg-cover rounded-full dark:bg-gray-500" src="https://source.unsplash.com/100x100/?portrait?5" />
-                        <p className="text-xl font-semibold leading-tight">Leroy Jenkins</p>
-                        <p className="dark:text-gray-400">Visual Designer</p>
+                        <p className="text-xl font-semibold leading-tight">Damon Duncdy</p>
+                        <p className="dark:text-gray-400">Writer, From UK</p>
                     </div>
                 </div>
             </div>
@@ -43,4 +43,4 @@ const OurTeam = () => {
     );
 };
 
-export default OurTeam;
+export default OurClient;

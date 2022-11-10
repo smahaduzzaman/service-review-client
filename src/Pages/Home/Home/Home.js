@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Services from '../Services/Services';
 import Article from './Article';
-import OurTeam from './OurTeam';
+import OurClient from './OurClient';
 import Slider from './Slider/Slider';
 import ViewAllButton from './ViewAllButton';
 
@@ -17,7 +17,7 @@ const Home = () => {
             <Services></Services>
             <ViewAllButton></ViewAllButton>
             <Article></Article>
-            <OurTeam></OurTeam>
+            <OurClient></OurClient>
         </div>
     );
 };
