@@ -14,6 +14,9 @@ import MyReview from "../../Pages/Reviews/MyReview";
 import AddService from "../../Pages/Home/Services/AddService";
 import Modal from "../../Pages/Home/Services/Modal";
 import About from "../../Pages/About/About";
+import Shop from "../../Pages/Shop/Shop";
+import Pricing from "../../Pages/Pricing/Pricing";
+import Contact from "../../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +59,10 @@ const router = createBrowserRouter([
                 element: <About></About>
             },
             {
+                path: '/contact',
+                element: <Contact></Contact>
+            },
+            {
                 path: '/signin',
                 element: <SignIn></SignIn>,
             },
@@ -75,6 +82,15 @@ const router = createBrowserRouter([
                 path: '/modal/:id',
                 element: <Modal></Modal>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path: '/shop',
+                element: <Shop></Shop>
+            },
+
+            {
+                path: '/pricing',
+                element: <Pricing></Pricing>
             }
         ]
     },
