@@ -9,8 +9,12 @@ const Footer = () => {
                     <li><Link to="/shop">Shop</Link></li>
                     <li><Link to="/faqs">FAQ's</Link></li>
                     <li><Link to="/pricing">Pricing</Link></li>
+                    <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                 </ul>
+                <div className=''>
+                    {/* <p className="">© 2021 Get Your Writer | All rights reserved.</p> */}
+                </div>
                 <div className="flex flex-col justify-center pt-6 lg:pt-0">
                     <div className="flex justify-center space-x-4">
                         <Link rel="noopener noreferrer" to="https://www.instagram.com/s_m_ahaduzzaman" title="Instagram" className="flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 dark:bg-violet-400 dark:text-gray-900">

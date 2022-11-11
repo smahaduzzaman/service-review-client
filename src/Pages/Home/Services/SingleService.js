@@ -5,7 +5,8 @@ import Modal from '../../../Pages/Home/Services/Modal';
 const SingleService = ({ service }) => {
     const [modalOn, setModalOn] = useState(false);
     const [choice, setChoice] = useState(false)
-    const { _id, title, description, img, author, popularity } = service;
+
+    const { title, description, img, author, popularity } = service;
 
     const clicked = () => {
         setModalOn(true)

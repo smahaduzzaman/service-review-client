@@ -17,6 +17,8 @@ import About from "../../Pages/About/About";
 import Shop from "../../Pages/Shop/Shop";
 import Pricing from "../../Pages/Pricing/Pricing";
 import Contact from "../../Pages/Contact/Contact";
+import EditReview from "../../Pages/Reviews/EditReview";
+import ViewAllButton from "../../Pages/Home/Home/ViewAllButton";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +37,7 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/services/${params.id}`)
             },
             {
                 path: '/reviews',
@@ -48,7 +50,7 @@ const router = createBrowserRouter([
             {
                 path: 'allservices',
                 element: <AllServices></AllServices>,
-                loader: () => fetch(`http://localhost:5000/allservices`)
+                loader: () => fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/allservices`)
             },
             {
                 path: '/faqs',
@@ -72,25 +74,34 @@ const router = createBrowserRouter([
             },
             {
                 path: 'myreview',
-                element: <PrivateRoute><MyReview></MyReview></PrivateRoute>,
+                element: <MyReview></MyReview>,
+            },
+            {
+                path: 'editreview',
+                element: <EditReview></EditReview>,
             },
             {
                 path: '/addservice',
-                element: <PrivateRoute><AddService></AddService></PrivateRoute>,
+                element: <AddService></AddService>,
+                // loader: () => fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/services`)
             },
             {
                 path: '/modal/:id',
                 element: <Modal></Modal>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/services/${params.id}`)
+
             },
             {
                 path: '/shop',
                 element: <Shop></Shop>
             },
-
             {
                 path: '/pricing',
                 element: <Pricing></Pricing>
+            },
+            {
+                path: 'viewallbutton',
+                element: <ViewAllButton></ViewAllButton>
             }
         ]
     },

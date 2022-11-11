@@ -12,8 +12,9 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        // fetch(`http://localhost:5000/reviews?email=${user?.email}`)
-        fetch(`http://localhost:5000/reviews `, {
+        // fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/reviews?email=${user?.email}`)
+
+        fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/reviews`, {
             // headers: {
             // authorization: `Bearer ${localStorage.getItem('token')}`
 
@@ -51,7 +52,7 @@ const Reviews = () => {
                 <p>Total Feedback:
                     <span className="font-semibold mx-3">{reviews.length}</span>
                 </p>
-                <p className="text-sm dark:text-gray-400">Wonderfull! This site acheive preety much feedbacks from VIP's.</p>
+                <p className="text-sm dark:text-gray-400">Wonderful! This site acheive pretty much feedbacks from VIP's.</p>
             </div>
             <div className="flex justify-end space-x-4">
                 <Link to="/"><button type="button" className="px-6 py-2 border rounded-md dark:border-violet-400">Back

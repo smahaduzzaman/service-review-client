@@ -12,13 +12,13 @@ const Review = ({ review }) => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const from = location.state?.from?.pathname || '/details';
+    // const from = location.state?.from?.pathname || '/editreview';
 
     // handle delete with localStorage
     const handleDelete = (id) => {
         const isDelete = window.confirm('Are you sure?');
         if (isDelete) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -37,29 +37,34 @@ const Review = ({ review }) => {
         }
     }
 
-    const handleUpdate = id => {
-        alert('Do you need to update this review?');
-        fetch(`http://localhost:5000/reviews/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ status: 'Submitted' })
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
-                    const remaining = reviews.filter(rev => rev._id !== id);
-                    const updating = reviews.find(rev => rev._id === id);
-                    updating.status = 'Approved'
-                    const newReviews = [updating, ...remaining];
-                    setReviews(newReviews);
-                }
-                navigate(from, { replace: true });
-                toast.success('Updated Successfully');
+    // Update Review by id with localStorage
+    const handleUpdate = (id) => {
+        const isUpdate = window.confirm('Are you sure?');
+        if (isUpdate) {
+            fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/reviews/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ title, description, img, feedback, author })
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.modifiedCount > 0) {
+                        alert('updated successfully');
+                        const remaining = reviews.filter(review => review._id !== id);
+                        setReviews(remaining);
+                        // update localStorage
+                        localStorage.setItem('reviews', JSON.stringify(remaining));
+                        toast.success('Updated Successfully');
+                    }
+
+                })
+        }
     }
+
+
 
     return (
         <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
@@ -108,7 +113,7 @@ const Review = ({ review }) => {
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-4 h-4 fill-current">
                                 <path d="M453.122,79.012a128,128,0,0,0-181.087.068l-15.511,15.7L241.142,79.114l-.1-.1a128,128,0,0,0-181.02,0l-6.91,6.91a128,128,0,0,0,0,181.019L235.485,449.314l20.595,21.578.491-.492.533.533L276.4,450.574,460.032,266.94a128.147,128.147,0,0,0,0-181.019ZM437.4,244.313,256.571,425.146,75.738,244.313a96,96,0,0,1,0-135.764l6.911-6.91a96,96,0,0,1,135.713-.051l38.093,38.787,38.274-38.736a96,96,0,0,1,135.765,0l6.91,6.909A96.11,96.11,0,0,1,437.4,244.313Z"></path>
                             </svg>
-                            <button onClick={() => handleUpdate(_id)} type="submit" className="font-semibold dark:border-gray-100 dark:text-gray-100" value="Update">Update</button>
+                            <Link onClick={() => handleUpdate(_id)} to="/editreview" type="submit" className="font-semibold dark:border-gray-100 dark:text-gray-100" value="Update">Edit</Link>
                         </button>
                     </div>
                 </div>
