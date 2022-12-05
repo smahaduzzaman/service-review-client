@@ -8,6 +8,7 @@ const Home = () => {
     const allCourses = useLoaderData()
     return (
         <div>
+        <h2>Post In This Category: {allCourses.length}</h2>
             <Container>
                 <Row>
                     <Col className='course-card'>
