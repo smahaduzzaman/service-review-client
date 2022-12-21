@@ -31,7 +31,7 @@ const SignIn = () => {
 
                 console.log(currentUser);
 
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ const SignIn = () => {
 
                 console.log(currentUser);
 
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -98,7 +98,7 @@ const SignIn = () => {
 
                 console.log(currentUser);
 
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

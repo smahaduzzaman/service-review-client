@@ -5,7 +5,7 @@ import MenuSingleService from './MenuSingleService';
 const MenuServices = () => {
     const [menuServices, setMenuServices] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/allservices`)
+        fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/allservices`)
             .then(res => res.json())
             .then(data => setMenuServices(data))
     }, [])

@@ -18,7 +18,7 @@ const Review = ({ review }) => {
     const handleDelete = (id) => {
         const isDelete = window.confirm('Are you sure?');
         if (isDelete) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -41,7 +41,7 @@ const Review = ({ review }) => {
     const handleUpdate = (id) => {
         const isUpdate = window.confirm('Are you sure?');
         if (isUpdate) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/reviews/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'

@@ -1,7 +1,7 @@
 Site Name: Get Your Writer
 Site Url: 
 Firebase Live: https://get-pro-writer.web.app
-Vercel Live: http://localhost:5000
+Vercel Live: https://b6a11-service-review-server-side-smahaduzzaman.vercel.app
 
 Author Name: S M Ahaduzzaman
 Contact: smahaduzzaman96@gmail.com
