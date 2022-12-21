@@ -16,7 +16,6 @@ import Modal from "../../Pages/Home/Services/Modal";
 import About from "../../Pages/About/About";
 import Shop from "../../Pages/Shop/Shop";
 import Pricing from "../../Pages/Pricing/Pricing";
-import Contact from "../../Pages/Contact/Contact";
 import EditReview from "../../Pages/Reviews/EditReview";
 import ViewAllButton from "../../Pages/Home/Home/ViewAllButton";
 
@@ -37,20 +36,20 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/services/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: '/reviews',
-                element: <Reviews></Reviews>,
+                element: <PrivateRoute><Reviews></Reviews></PrivateRoute>,
             },
             {
                 path: '/services',
                 element: <Services></Services>,
+                loader: () => fetch(`http://localhost:5000/services`)
             },
             {
-                path: 'allservices',
+                path: '/allservices',
                 element: <AllServices></AllServices>,
-                loader: () => fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/allservices`)
             },
             {
                 path: '/faqs',
@@ -61,10 +60,6 @@ const router = createBrowserRouter([
                 element: <About></About>
             },
             {
-                path: '/contact',
-                element: <Contact></Contact>
-            },
-            {
                 path: '/signin',
                 element: <SignIn></SignIn>,
             },
@@ -73,22 +68,22 @@ const router = createBrowserRouter([
                 element: <SignUp></SignUp>,
             },
             {
-                path: 'myreview',
+                path: '/myreview',
                 element: <MyReview></MyReview>,
             },
             {
-                path: 'editreview',
+                path: '/editreview',
                 element: <EditReview></EditReview>,
             },
             {
                 path: '/addservice',
-                element: <AddService></AddService>,
-                // loader: () => fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/services`)
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>,
+                // loader: () => fetch(`http://localhost:5000/services`)
             },
             {
                 path: '/modal/:id',
                 element: <Modal></Modal>,
-                loader: ({ params }) => fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/services/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
 
             },
             {

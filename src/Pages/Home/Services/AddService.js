@@ -39,7 +39,7 @@ const AddService = () => {
 
         console.log(serviceData);
 
-        fetch('https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/addservice', {
+        fetch('http://localhost:5000/addservice', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

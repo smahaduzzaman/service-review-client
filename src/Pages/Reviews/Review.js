@@ -18,7 +18,7 @@ const Review = ({ review }) => {
     const handleDelete = (id) => {
         const isDelete = window.confirm('Are you sure?');
         if (isDelete) {
-            fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/reviews/${id}`, {
+            fetch(`http://localhost:5000/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -41,7 +41,7 @@ const Review = ({ review }) => {
     const handleUpdate = (id) => {
         const isUpdate = window.confirm('Are you sure?');
         if (isUpdate) {
-            fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/reviews/${id}`, {
+            fetch(`http://localhost:5000/reviews/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -67,12 +67,12 @@ const Review = ({ review }) => {
 
 
     return (
-        <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
+        <li className="flex flex-row md:flex-col lg:flex-col py-6 sm:flex-row sm:justify-between">
             <Helmet>
                 <title>Review</title>
                 <meta name="description" content="Review" />
             </Helmet>
-            <div className="flex w-full space-x-2 sm:space-x-4">
+            <div className="flex w-full flex-row md:flex-col lg:flex-row space-x-2 sm:space-x-4">
                 {
                     img ?
                         <img className="flex-shrink-0 object-cover w-20 h-20 dark:border-transparent rounded outline-none sm:w-32 sm:h-32 dark:bg-gray-500" src={author.photoUrl} alt={author.name} />

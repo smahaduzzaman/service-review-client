@@ -15,7 +15,7 @@ const EditReview = (id) => {
 
         console.log(reviewData);
 
-        fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/reviews/${id}`, {
+        fetch(`http://localhost:5000/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

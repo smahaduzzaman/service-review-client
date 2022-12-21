@@ -12,9 +12,9 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        // fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/reviews?email=${user?.email}`)
+        // fetch(`http://localhost:5000/reviews?email=${user?.email}`)
 
-        fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/reviews`, {
+        fetch(`http://localhost:5000/reviews`, {
             // headers: {
             // authorization: `Bearer ${localStorage.getItem('token')}`
 

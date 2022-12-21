@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import upImage from '../../assets/logos/get-your-writer-logo.png'
+import upImage from '../../assets/logos/get-writer-favicon.png'
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
@@ -33,24 +33,24 @@ const SignUp = () => {
                 <title>Sign Up</title>
                 <meta name="description" content="Sign Up" />
             </Helmet>
-            <div className="w-3/4 p-8 space-y-3 mx-auto dark:bg-gray-900 dark:text-gray-100">
+            <div className="w-3/4 md:w-1/2 lg:w-1/2 p-8 space-y-3 mx-auto dark:bg-gray-900 dark:text-gray-100">
                 <h1 className="text-2xl font-bold text-center">Sign Up</h1>
                 <form onSubmit={handleSignUp} novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
                         <label for="username" className="block dark:text-gray-400">Username</label>
-                        <input type="text" name="name" id="name" placeholder="Name" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <input type="text" name="name" id="name" placeholder="Name" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:dark:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label for="username" className="block dark:text-gray-400">Username</label>
-                        <input type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <input type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:dark:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label for="phone" className="block dark:text-gray-400">Phone No</label>
-                        <input type="phone" name="phone" id="Phone" placeholder="Phone No" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <input type="phone" name="phone" id="Phone" placeholder="Phone No" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:dark:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label for="password" className="block dark:text-gray-400">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:dark:border-violet-400" />
                         <div className="flex justify-end text-xs dark:text-gray-400">
                             <Link rel="noopener noreferrer" to="#">Forgot Password?</Link>
                         </div>

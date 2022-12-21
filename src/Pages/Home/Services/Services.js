@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import SingleService from './SingleService';
 
 const Services = () => {
-    const [services, setServices] = useState([]);
+    const services = useLoaderData();
+    // const [services, setServices] = useState([]);
 
-    useEffect(() => {
-        fetch(`https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/services`)
-            .then(res => res.json())
-            .then(data => setServices(data))
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/services')
+    //         .then(res => res.json())
+    //         .then(data => setServices(data)) 
+    // }, []);
 
     return (
         <div className="dark:bg-gray-900 dark:text-gray-100 pt-10">

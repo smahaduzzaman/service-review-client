@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/logos/get-your-writer-logo.png';
+import logo from '../../../assets/logos/get-writer-favicon.png';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
@@ -20,14 +20,14 @@ const Header = () => {
         <header className="p-4 dark:bg-gray-800 dark:text-gray-100">
             <div className="flex justify-between h-16 mx-auto">
                 <Link rel="noopener noreferrer" to="/" aria-label="Back to homepage" className="flex justify-start items-center p-2">
-                    <img className='w-1/2' src={logo} alt="Logo" /></Link>
+                    <img className='w-16 md:w-16 lg:w-24 h-auto' src={logo} alt="Logo" /></Link>
                 <ul className="items-stretch hidden mr-60 space-x-3 lg:flex">
                     <li className="flex">
                         <Link rel="noopener noreferrer" to="/" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400">Home</Link>
                     </li>
-                    <li className="flex">
-                        <Link rel="noopener noreferrer" to="/services" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Services</Link>
-                    </li>
+                    {/* <li className="flex">
+                        <Link rel="noopener noreferrer" to="/allservices" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">All Services</Link>
+                    </li> */}
                     <li className="flex">
                         <Link rel="noopener noreferrer" to="/reviews" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Reviews</Link>
                     </li>

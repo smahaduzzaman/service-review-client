@@ -5,8 +5,9 @@ import Modal from '../../../Pages/Home/Services/Modal';
 const SingleService = ({ service }) => {
     const [modalOn, setModalOn] = useState(false);
     const [choice, setChoice] = useState(false)
-
     const { title, description, img, author, popularity } = service;
+    // console.log(title, description, img, author, popularity);
+    console.log(author.email)
 
     const clicked = () => {
         setModalOn(true)
@@ -15,7 +16,7 @@ const SingleService = ({ service }) => {
     return (
         <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
             <div className="flex space-x-4">
-                <img alt="" src={author.photoUrl} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                <img alt={author.name} src={author.photoUrl} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                 <div className="flex flex-col space-y-1">
                     <Link rel="noopener noreferrer" to="#" className="text-sm font-semibold">{author.name}</Link>
                     <span className="text-xs dark:text-gray-400">{author.createdAt}</span>

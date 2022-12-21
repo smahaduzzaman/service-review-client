@@ -31,7 +31,7 @@ const SignIn = () => {
 
                 console.log(currentUser);
 
-                fetch('https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/jwt', {
+                fetch('http://localhost:5000/jwt', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ const SignIn = () => {
 
                 console.log(currentUser);
 
-                fetch('https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/jwt', {
+                fetch('http://localhost:5000/jwt', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -98,7 +98,7 @@ const SignIn = () => {
 
                 console.log(currentUser);
 
-                fetch('https://b6a11-service-review-server-side-smahaduzzaman.vercel.app/jwt', {
+                fetch('http://localhost:5000/jwt', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -126,16 +126,16 @@ const SignIn = () => {
                 <title>Sign In</title>
                 <meta name="description" content="Sign In" />
             </Helmet>
-            <div className="w-3/4 p-8 space-y-3 mx-auto dark:bg-gray-900 dark:text-gray-100">
+            <div className="w-3/4 md:w-1/2 lg:w-1/2 p-8 space-y-3 mx-auto dark:bg-gray-900 dark:text-gray-100">
                 <h1 className="text-2xl font-bold text-center">Sign In</h1>
                 <form onSubmit={handleLogin} novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
-                        <label for="email" className="block dark:text-gray-400">Emai.</label>
-                        <input type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <label for="email" className="block dark:text-gray-400 border-solid">Email.</label>
+                        <input type="email" name="email" id="email" placeholder="Enter Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-700 dark:text-gray-100 focus:dark:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
-                        <label for="password" className="block dark:text-gray-400">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <label for="password" className="block dark:text-gray-400">Password.</label>
+                        <input type="password" name="password" id="password" placeholder="Your Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-700 dark:text-gray-100 focus:dark:border-violet-400" />
                         <div className="flex justify-end text-xs dark:text-gray-400">
                             <Link rel="noopener noreferrer" to="#">Forgot Password?</Link>
                         </div>
