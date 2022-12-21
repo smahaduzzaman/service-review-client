@@ -35,19 +35,19 @@ const Header = () => {
                         <Link style={{ textDecoration: 'none', color: 'white' }} to="/blog">Blog</Link>
                         <Link style={{ textDecoration: 'none', color: 'white' }} className='mx-3' to="/tutorial">Tutorial</Link>
                     </Nav>
-                    <Button className='mx-3' variant='light'>Switch Dark</Button>
+                    {/* <Button className='mx-3' variant='light'>Switch Dark</Button> */}
                     <Nav>
                         <Nav.Link to="/login">
                             {
                                 user?.uid ?
                                     <>
                                         <span>{user?.displayName}</span>
-                                        <Button className='mx-3' variant='light' onClick={handleLogOut}>Logout</Button>
+                                        <Button style={{ textDecoration: 'none', color: 'white' }} className='mx-3' variant='light' onClick={handleLogOut}>Logout</Button>
                                     </>
                                     :
                                     <>
-                                        <Link className='me-3' to="/login">Login</Link>
-                                        <Link to="/register">Register</Link>
+                                        <Link style={{ textDecoration: 'none', color: 'white' }} className='me-3' to="/login">Login</Link>
+                                        <Link style={{ textDecoration: 'none', color: 'white' }} to="/register">Register</Link>
                                     </>
                             }
                         </Nav.Link>
