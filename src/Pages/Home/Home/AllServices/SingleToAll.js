@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const SingleToAll = ({ service }) => {
     console.log(service)
 
-
     return (
         <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
             <div className="flex space-x-4">

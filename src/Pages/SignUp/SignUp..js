@@ -45,7 +45,7 @@ const SignUp = () => {
                         <input type="email" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:dark:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">
-                        <label for="phone" className="block dark:text-gray-400">Phone No</label>
+                        <label for="phone" className="block dark:text-gray-400">Phone URL</label>
                         <input type="phone" name="phone" id="Phone" placeholder="Phone No" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-700 dark:text-gray-100 focus:dark:border-violet-400" />
                     </div>
                     <div className="space-y-1 text-sm">

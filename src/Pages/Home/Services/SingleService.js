@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import Modal from '../../../Pages/Home/Services/Modal';
 
 const SingleService = ({ service }) => {
+    // console.log(service)
     const [modalOn, setModalOn] = useState(false);
     const [choice, setChoice] = useState(false)
     const { title, description, img, author, popularity } = service;
     // console.log(title, description, img, author, popularity);
-    console.log(author.email)
+    console.log(author)
 
     const clicked = () => {
         setModalOn(true)

@@ -18,6 +18,7 @@ import Shop from "../../Pages/Shop/Shop";
 import Pricing from "../../Pages/Pricing/Pricing";
 import EditReview from "../../Pages/Reviews/EditReview";
 import ViewAllButton from "../../Pages/Home/Home/ViewAllButton";
+import MenuServices from "../../Pages/MenuServices/MenuServices";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,19 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>
+            },
+            {
+                path: '/services',
+                element: <Services></Services>,
+                loader: () => fetch(`http://localhost:5000/services`)
+            },
+            {
+                path: '/allservices',
+                element: <AllServices></AllServices>,
+            },
+            {
+                path: 'menuservices',
+                element: <MenuServices></MenuServices>
             },
             {
                 path: 'details',
@@ -41,15 +55,6 @@ const router = createBrowserRouter([
             {
                 path: '/reviews',
                 element: <PrivateRoute><Reviews></Reviews></PrivateRoute>,
-            },
-            {
-                path: '/services',
-                element: <Services></Services>,
-                loader: () => fetch(`http://localhost:5000/services`)
-            },
-            {
-                path: '/allservices',
-                element: <AllServices></AllServices>,
             },
             {
                 path: '/faqs',

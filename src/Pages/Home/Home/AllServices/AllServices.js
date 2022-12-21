@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 import SingleToAll from './SingleToAll';
 
-const AllServices = ({ allServices }) => {
+const AllServices = () => {
     const [services, setServices] = useState([]);
+    // console.log(services)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services`)
+        fetch(`http://localhost:5000/allservices`)
             .then(res => res.json())
             .then(data => setServices(data))
     }, []);
