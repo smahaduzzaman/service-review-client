@@ -121,7 +121,7 @@ const SignIn = () => {
     }
 
     return (
-        <div className=' dark:bg-gray-900 dark:text-gray-100"'>
+        <div className=' dark:bg-gray-900 dark:text-gray-100'>
             <Helmet>
                 <title>Sign In</title>
                 <meta name="description" content="Sign In" />

@@ -23,16 +23,16 @@ const Header = () => {
                     <img className='w-16 md:w-16 lg:w-24 h-auto' src={logo} alt="Logo" /></Link>
                 <ul className="items-stretch hidden mr-10 space-x-3 lg:flex">
                     <li className="flex">
-                        <Link rel="noopener noreferrer" to="/" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent dark:text-violet-400 dark:border-violet-400">Home</Link>
+                        <Link rel="noopener noreferrer" to="/" className="flex items-center px-4 -mb-1 dark:border-transparent dark:text-violet-400 dark:border-violet-400">Home</Link>
                     </li>
                     <li className="flex">
-                        <Link rel="noopener noreferrer" target="_blank" to="/menuservices" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">All Services</Link>
+                        <Link rel="noopener noreferrer" target="_blank" to="/menuservices" className="flex items-center px-4 -mb-1 dark:border-transparent">All Services</Link>
                     </li>
                     <li className="flex">
-                        <Link rel="noopener noreferrer" to="/reviews" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent" target="_blank">Reviews</Link>
+                        <Link rel="noopener noreferrer" to="/reviews" className="flex items-center px-4 -mb-1 dark:border-transparent" target="_blank">Reviews</Link>
                     </li>
                     <li className="flex">
-                        <Link rel="noopener noreferrer" to="/faqs" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent" target="_blank">Blog</Link>
+                        <Link rel="noopener noreferrer" to="/faqs" className="flex items-center px-4 -mb-1 dark:border-transparent" target="_blank">Blog</Link>
                     </li>
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
@@ -40,11 +40,11 @@ const Header = () => {
                         user?.email ?
                             <>
                                 <div className=''>
-                                    <Link rel="noopener noreferrer" to="myreview" className="px-4 -mb-1 border-b-2 dark:border-transparent" target="_blank">My Review</Link>
-                                    <Link rel="noopener noreferrer" to="/addservice" className="px-4 -mb-1 border-b-2 dark:border-transparent" target="_blank">Add Servece</Link>
+                                    <Link rel="noopener noreferrer" to="myreview" className="px-4 -mb-1 dark:border-transparent" target="_blank">My Review</Link>
+                                    <Link rel="noopener noreferrer" to="/addservice" className="px-4 -mb-1 dark:border-transparent" target="_blank">Add Servece</Link>
                                 </div>
 
-                                <Link onClick={handleLogOut} rel="noopener noreferrer" to="/signin" className="flex items-center px-4 -mb-1 border-b-2 dark:border-transparent">Sign Out</Link>
+                                <Link onClick={handleLogOut} rel="noopener noreferrer" to="/signin" className="flex items-center px-4 -mb-1 dark:border-transparent">Sign Out</Link>
                             </>
                             : <Link to="/signin" className="self-center px-8 py-3 rounded">Sign in</Link>
 

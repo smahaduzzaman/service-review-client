@@ -13,6 +13,10 @@ const Home = () => {
                 <title>Home Page</title>
                 <meta name="description" content="Home Page" />
             </Helmet>
+            <div className='pt-10'>
+                <h1 className='text-5xl font-bold text-center text-gray-700 dark:text-gray-200'>Welcome!</h1>
+                <p className='text-xl my-10 mx-auto p-5 w-3/4 font-semibold text-center text-gray-700 dark:text-gray-200'>Get Your Writer Provide you all to get quality writing of poetry, article, research paper, song etc. We are commited for better servicing.</p>
+            </div>
             <Slider></Slider>
             <Services></Services>
             <ViewAllButton></ViewAllButton>

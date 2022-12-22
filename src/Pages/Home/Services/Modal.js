@@ -26,7 +26,7 @@ const Modal = ({ setModalOn, setChoice }) => {
 
                         <div className="flex  text-lg  text-zinc-600   mb-10" >Are you sure ?</div>
                         <img src={photo.img} alt="" />
-                        <div className="flex">
+                        <div className="flex mt-3">
                             <button onClick={handleCancelClick} className="rounded px-4 py-2 ml-4 text-white bg-blue-500 ">Cancel</button>
                         </div>
 

@@ -84,19 +84,19 @@ const AddService = () => {
                         </div>
                         <div className="col-span-full">
                             <label for="address" className="text-sm">Address</label>
-                            <input id="address" name='address' type="text" placeholder="" className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900" />
+                            <input id="address" name='address' type="text" placeholder="Address" className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900" />
                         </div>
                         <div className="col-span-full sm:col-span-2">
                             <label for="city" className="text-sm">City</label>
-                            <input id="city" name='city' type="text" placeholder="" className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900" />
+                            <input id="city" name='city' type="text" placeholder="City" className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900" />
                         </div>
                         <div className="col-span-full sm:col-span-2">
                             <label for="state" className="text-sm">State / Province</label>
-                            <input id="state" name='state' type="text" placeholder="" className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900" />
+                            <input id="state" name='state' type="text" placeholder="Start Or Province" className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900" />
                         </div>
                         <div className="col-span-full sm:col-span-2">
                             <label for="zip" className="text-sm">ZIP / Postal</label>
-                            <input id="zip" name='zip' type="text" placeholder="" className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900" />
+                            <input id="zip" name='zip' type="text" placeholder="ZIP Or Postal" className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 dark:text-gray-900" />
                         </div>
                     </div>
                 </fieldset>

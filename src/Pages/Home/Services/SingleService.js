@@ -6,12 +6,11 @@ const SingleService = ({ service }) => {
     // console.log(service)
     const [modalOn, setModalOn] = useState(false);
     const [choice, setChoice] = useState(false)
-    const { title, description, img, author, popularity } = service;
-    // console.log(title, description, img, author, popularity);
+    const { _id, title, description, img, author, popularity } = service;
     console.log(author)
 
     const clicked = () => {
-        setModalOn(true)
+        setModalOn(true) 
     }
 
     return (
@@ -26,9 +25,9 @@ const SingleService = ({ service }) => {
             <div className=''>
                 <div>
                     <img
-                        onClick={clicked}
+                        onClick={() => clicked(service)}
                         src={img} alt={title}
-                        className="w-full h-auto rounded-lg mb-4 h-60 sm:h-96 dark:bg-gray-500 cursor-pointer"
+                        className="w-full md:w-full lg:w-full rounded-lg mb-4 dark:bg-gray-500 cursor-pointer"
                     />
                     {modalOn && < Modal setModalOn={setModalOn} setChoice={setChoice} />}
                     {choice &&
